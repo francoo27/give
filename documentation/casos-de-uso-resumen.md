@@ -124,6 +124,6 @@ Denunciar una persona fisica/juridica
 
 [^5]: ¿Hace falta que una vez autenticado el usuario ponga algo para el alta? o ya por existir una persona puede recibir plata de suscripción
 
-[^6] ¿Que es un monto alto?
+[^6]: ¿Que es un monto alto?
 
-[^7] ¿Qué es una frecuencia alta?
+[^7]: ¿Qué es una frecuencia alta?
