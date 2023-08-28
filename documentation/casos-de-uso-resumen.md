@@ -114,11 +114,7 @@ Denunciar una persona fisica/juridica
 
 ## Notas
 
-[^1]: Hay que analizar si hacemos de intermediario entre las donaciones
-    
-❌ tiene el punto negativo de duplicar comisiones que le cobramos al usuario final
-    
-✔ Tenemos poder de intervenir en la donaciones que tegan algun problema (evitar lavado de dinero)
+[^1]: Hay que analizar si hacemos de intermediario entre las donaciones, tiene el punto negativo de duplicar comisiones que le cobramos al usuario final. Punto positivo, tenemos poder de intervenir en la donaciones que tegan algun problema (evitar lavado de dinero)
 
 [^2]: _idem_ punto 1
 
