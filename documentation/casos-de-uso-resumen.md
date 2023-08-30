@@ -112,8 +112,6 @@ Denunciar una persona fisica/juridica
         - generar estadísticas
     - Otro ejemplo: si se denuncia una campaña, poder ver quien denuncio que moderador atendio las denuncias y como lo resolvio , hace cuanto se crearon la cuenta los que denuncian, comentarios de la denuncia, _review_ etc etc
 
-## Notas
-
 [^1]: Hay que analizar si hacemos de intermediario entre las donaciones, tiene el punto negativo de duplicar comisiones que le cobramos al usuario final. Punto positivo, tenemos poder de intervenir en la donaciones que tegan algun problema (evitar lavado de dinero)
 
 [^2]: _idem_ punto 1
