@@ -41,8 +41,8 @@
 **CAMINOS ALTERNATIVOS:**
 
 3.**\<En lugar de\>** Persona elige "O unirse con Facebook/Google".\
-&nbsp;&nbsp;&nbsp;&nbsp;3.a Fin CU. Iniciar CU-00x. **¿Lo ponemos acá o hacemos un CU explusivo para los logueos por otro medios?**\
-   **Cualquiera sea el caso, si ya se ha logueado anteriormente con otro medio, debería saltar al iniciar sesión**\
+&nbsp;&nbsp;&nbsp;&nbsp;3.a Fin CU. Iniciar CU-00x. *¿Lo ponemos acá o hacemos un CU explusivo para los logueos por otro medios?*\
+   *Cualquiera sea el caso, si ya se ha logueado anteriormente con otro medio, debería saltar al iniciar sesión*\
 5.**\<Posterior\>** Usuario o correo ya han sido utilizados o la contraseña es insegura.\
 &nbsp;&nbsp;&nbsp;&nbsp;5.a Notifica a la persona. Vuelve al paso 2.\
 6.**\<Previo\>** Persona sale del sistema.\
