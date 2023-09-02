@@ -36,7 +36,7 @@
    - Tipo de Crowdfunding: [Por Tiempo, Por Monto, Ejecución Inmediata]
 4. El usuario pasa al **Paso 2: Fondos Necesarios**, donde debe desglosar en una tabla los fondos necesarios por ítem, incluyendo materiales, objetos, productos, horas hombre y precio de hora hombre.
 5. Luego, en el **Paso 3: Recompensas**, el usuario describe las recompensas que ofrecerá a los donantes por donar ciertos montos.
-6. Finalmente, en el **Paso 4: Plan de Progreso**, el usuario establece checkpoints dentro del rango de fechas de la campaña para mostrar el progreso de la misma.
+6. Finalmente, en el **Paso 4: Plan de Progreso** (Opcional), el usuario establece checkpoints dentro del rango de fechas de la campaña para mostrar el progreso de la misma.
 7. El usuario envía el formulario de creación de campaña.
 8. El sistema valida los campos del formulario.
 9. Si el usuario está validado:
