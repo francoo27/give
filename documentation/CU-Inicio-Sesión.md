@@ -1,4 +1,4 @@
-**Código y Nombre del CASO  DE  USO:** CU-002 - Inicio de seción
+**Código y Nombre del CASO  DE  USO:** CU-002 - Inicio de sesión
 
 | Nivel  | Estructura | Alcance|Caja|Instanciacion| Interaccion|
 |:------- |:-------|:-----|:-----|:-----|:-----|
