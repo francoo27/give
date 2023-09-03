@@ -26,17 +26,19 @@
 
 1. Persona entra a la plataforma y elige la opción "Unirse a Give".
 2. Sistema muestra formulario de creación de usuario:
+   - Cuenta personal/Cuenta empresarial.
    - Usuario.
    - Contraseña.
    - Correo.
-   - Nombre. (OPCIONAL)
+   - Nombre/Razón social. (OPCIONAL)
    - Apellido. (OPCIONAL)
    - Dni. (OPCIONAL)
-3. Usuario completa información y apreta "Crear usuario".
-4. Sistema valida inexistencia de usuario y correo y validez de contraseña.
-5. Sistema crea usuario temporal y envia correo electrónico de validación notificando a la persona.
-6. Persona valida usuario. Sistema lleva a página de inicio de seción.}
-7. Fin CU.
+   - "Para evitar fraudes, ciertos datos son necesarios para poder realizar todas las funciones de Give, leer más aquí"
+4. Usuario completa información y apreta "Crear usuario".
+5. Sistema valida inexistencia de usuario y correo y validez de contraseña.
+6. Sistema crea usuario temporal y envia correo electrónico de validación notificando a la persona.
+7. Persona valida usuario. Sistema lleva a página de inicio de seción.}
+8. Fin CU.
 
 **CAMINOS ALTERNATIVOS:**
 
