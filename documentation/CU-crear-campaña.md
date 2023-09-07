@@ -30,6 +30,7 @@
    - Título de la campaña: [campo de texto]
    - Descripción de la campaña: [campo de texto largo]
    - Fecha de inicio y finalización: [campo de selección de fechas]
+      - Fecha de finalización (al menos 30 días después de la fecha de inicio) **[RN02]**: [campo de selección de fechas]
    - Personas involucradas: [campo de texto]
    - Categoría principal: [campo de selección]
    - Subcategorías: [campo de selección múltiple]
