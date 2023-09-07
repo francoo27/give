@@ -40,10 +40,7 @@
 6. Finalmente, en el **Paso 4: Plan de Progreso** (Opcional), el usuario establece checkpoints dentro del rango de fechas de la campaña para mostrar el progreso de la misma.
 7. El usuario envía el formulario de creación de campaña.
 8. El sistema valida los campos del formulario.
-9. Si el usuario está validado:
-   - La campaña queda en estado PAUSADA, esperando su validación.
-10. Si el usuario no está validado:
-    - La campaña queda en estado ACTIVA.
+9. La campaña queda en estado ACTIVA.
 
 **CAMINOS ALTERNATIVOS:**
 
@@ -69,3 +66,6 @@
 5d. La campaña supera la meta de recaudación especificada dentro del tiempo especificado:
    - El sistema muestra un mensaje de éxito al usuario indicando que la campaña ha alcanzado o superado la meta de recaudación.
    - La campaña se marca como "Exitosa" en la plataforma.
+
+9a. El usuario no está validado.
+    10.a.1 Se aplica **[RN01]** Fijando un tope a la campaña.
