@@ -16,7 +16,7 @@ stateDiagram-v2
     state AUDITORIA {
         [*] --> REVISION
         REVISION --> RECHAZADA
-        REVISION --> BAN: Campaña ya existente
+        REVISION --> BANEADA: Campaña ya existente
         REVISION --> INCOMPLETA
         INCOMPLETA --> REVISION
         RECHAZADA --> [*]
