@@ -30,7 +30,7 @@
    - Título de la campaña: [campo de texto]
    - Descripción de la campaña: [campo de texto largo]
    - Fecha de inicio y finalización: [campo de selección de fechas]
-      - Fecha de finalización (al menos 30 días después de la fecha de inicio) **[RN02]**: [campo de selección de fechas]
+      - Fecha de finalización (al menos 30 días después de la fecha de inicio) [RN-002](./reglas-de-negocio.md/#2): [campo de selección de fechas]
    - Personas involucradas: [campo de texto]
    - Categoría principal: [campo de selección]
    - Subcategorías: [campo de selección múltiple]
@@ -68,4 +68,4 @@
    - La campaña se marca como "Exitosa" en la plataforma.
 
 9a. El usuario no está validado.
-    10.a.1 Se aplica **[RN01]** Fijando un tope a la campaña.
+   10.a.1 Se aplica [RN-001](./reglas-de-negocio.md/#1) Fijando un tope a la campaña.

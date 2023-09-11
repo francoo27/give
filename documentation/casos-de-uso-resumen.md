@@ -23,11 +23,14 @@ Denunciar una persona fisica/juridica
 - **Crear campaña**
     -  Si no esta validado se llama a CU Validación identidad. (No necesariamente impedimos que siga con la creación de la campaña). Usuario crea campaña única o continua (creador de contenido) describiendo la campaña, dependiendo el caso puede cargar comprobantes. Llama a CU validación campaña a priori.
     - Aca definimos que tipo de campaña se va a hacer  por ej si es a un monto que si o si es necesario llegar a un cierto monto o es abierta, montos, tiempos 
-- **Editar proyecto**
-    - se puede contemplar la presentacion de documentacion extra, avance de proyecto, evidencias, etc	
+- **Editar campaña**
+    - datos generales del poecto (titulo, descripción, etc)
     - _milestones_
-    - ejecución inmediata
     - _crowdfunding_
+- **Informe de avances de campaña**
+    - presentacion de documentacion extra
+    - avance de proyecto
+    - evidencias
 - **Moderar proyectos**
     - Bloqueo manual de parte del usuario
     - Bloqueo por parte de un administrador por sospecha de fraude
