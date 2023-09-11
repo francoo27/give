@@ -20,7 +20,7 @@ stateDiagram-v2
         REVISION --> INCOMPLETA
         INCOMPLETA --> REVISION
         RECHAZADA --> [*]
-        BAN --> [*]
+        BANEADA --> [*]
     }
 
 
