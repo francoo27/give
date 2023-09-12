@@ -1,37 +1,63 @@
-**CASO DE USO: CU-003 - Edición de Campaña**
+**Código y Nombre del CASO  DE  USO:** CU-004 - Donación
 
-**Meta del CASO DE USO:** Permitir a los usuarios editar una campaña de crowdfunding en la plataforma.
+| Nivel  | Estructura | Alcance|Caja|Instanciacion| Interaccion|
+|:------- |:-------|:-----|:-----|:-----|:-----|
+| Resumen    | Estructurado | Sistema |Negra |Real |Semantico|
 
-**ACTORES**
+**Meta del CASO  DE  USO:** Usuario dona en campaña.
 
-**Primario:** Usuario registrado
+**ACTORES** 
 
-**Iniciador:** Usuario registrado
+**Primario:** Usuario donante
 
-**PRECONDICIONES (de negocio):**
-- El usuario debe estar registrado en la plataforma.
-- El usuario debe tener los permisos necesarios para editar una campaña.
-- El usuario debe tener una campaña ya creada.
-- La campaña debe pertenecer al usuario que quiere editar la misma. ([ACL](https://es.wikipedia.org/wiki/Lista_de_control_de_acceso))
+**Iniciador:** Usuario donante
 
-**DISPARADOR:** El usuario decide editar una campaña.
+**Otros:** <vacío>
+
+**PRECONDICIONES (de sistema):**
+1. Existe usuario.
+2. Existe campaña.
+3. Campaña está activa.
+
+**DISPARADOR:** Usuario entra en lista de campañas activas.
 
 **FLUJO DE SUCESOS**
 
 **CAMINO BÁSICO:**
 
-1. El usuario accede a la lista de campañas en la plataforma.
-2. Selecciona una campaña con estado distinto de final ([RN-003](./reglas-de-negocio.md/#3)).
-3. En el **Paso 1: Descripción del Proyecto**, el usuario podra editar la siguiente información:
-   - Título de la campaña: [campo de texto]
-   - Descripción de la campaña: [campo de texto largo]
-   - ~~Fecha de inicio y finalización~~ ([RN-004](./reglas-de-negocio.md/#4))
-   - Personas involucradas: [campo de texto]
-   - Categoría principal: [campo de selección]
-   - Subcategorías: [campo de selección múltiple]
-   - ~~Tipo de Crowdfunding~~ ([RN-005](./reglas-de-negocio.md/#5))
-4. El usuario pasa al **Paso 2: Fondos Necesarios**, donde debe desglosar en una tabla los fondos necesarios por ítem, incluyendo materiales, objetos, productos, horas hombre y precio de hora hombre.
-5. Luego, en el **Paso 3: Recompensas** (Opcional), el usuario puede editar las recompensas que ofrecerá a los donantes por donar ciertos montos (_tiers_).
-6. Finalmente, en el **Paso 4: Plan de Progreso** (Opcional), el usuario puede editar checkpoints dentro del rango de fechas de la campaña para mostrar el progreso de la misma.
-7. El usuario envía el formulario de edición de campaña.
-8. El sistema valida los campos del formulario.
+1. Persona entra a la plataforma y elige la opción "Unirse a Give".
+2. Sistema muestra formulario de creación de usuario:
+   - Cuenta personal/Cuenta empresarial.
+   - Usuario.
+   - Contraseña.
+   - Correo.
+   - Nombre/Razón social. (OPCIONAL)
+   - Apellido. (OPCIONAL)
+   - Dni. (OPCIONAL)
+   - "Para evitar fraudes, ciertos datos son necesarios para poder realizar todas las funciones de Give, leer más aquí"
+4. Usuario completa información y apreta "Crear usuario".
+5. Sistema valida inexistencia de usuario y correo y validez de contraseña.
+6. Sistema crea usuario temporal y envia correo electrónico de validación notificando a la persona.
+7. Persona valida usuario. Sistema lleva a página de inicio de seción.}
+8. Fin CU.
+
+**CAMINOS ALTERNATIVOS:**
+
+3.**\<En lugar de\>** Persona elige "O unirse con Facebook/Google".\
+&nbsp;&nbsp;&nbsp;&nbsp;3.a Fin CU. Iniciar CU-00x.\
+*¿Lo ponemos acá o hacemos un CU explusivo para los logueos por otro medios?*\
+   *Cualquiera sea el caso, si ya se ha logueado anteriormente con otro medio, debería saltar al iniciar sesión*\
+5.**\<Posterior\>** Usuario o correo ya han sido utilizados o la contraseña es insegura.\
+&nbsp;&nbsp;&nbsp;&nbsp;5.a Notifica a la persona. Vuelve al paso 2.\
+6.**\<Previo\>** Persona sale del sistema.\
+&nbsp;&nbsp;&nbsp;&nbsp;6.a Fin CU.\
+7.**\<En lugar de\>** Persona no valida usuario en x días.\
+&nbsp;&nbsp;&nbsp;&nbsp;7.a Sistema elimina usuario temporal. Fin CU.
+    
+**POSTCONDICIONES (de sistema):**
+
+**Éxito:** Se registra usuario.
+
+**Éxito alternativo:** Se registra usuario enlazado a cuenta de Facebook/etc.
+
+**Fracaso:** No se crea usuario y/o usuario temporal es eliminado.
