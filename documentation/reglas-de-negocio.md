@@ -5,3 +5,4 @@
 | <span id="3">RN-003</span>      | Una campaña se considera en **estado final** cuando se encuntra en estado Recahzada, Baneada, Eliminada o Finalizada |
 | <span id="4">RN-004</span>      | Una campaña que ya se encuentre activa, no se le permitira cambiar la Fecha de inicio o de finalización |
 | <span id="5">RN-005</span>      | Una campaña que ya se encuentre activa, no se le permitira cambiar el Tipo de Crowdfunding |
+
