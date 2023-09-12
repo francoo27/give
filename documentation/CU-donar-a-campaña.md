@@ -25,16 +25,21 @@
 
 **CAMINO BÁSICO:**
 
-1. Persona entra a la plataforma y elige la opción "Unirse a Give".
-2. Sistema muestra formulario de creación de usuario:
-   - Cuenta personal/Cuenta empresarial.
-   - Usuario.
-   - Contraseña.
-   - Correo.
-   - Nombre/Razón social. (OPCIONAL)
-   - Apellido. (OPCIONAL)
-   - Dni. (OPCIONAL)
-   - "Para evitar fraudes, ciertos datos son necesarios para poder realizar todas las funciones de Give, leer más aquí"
+1. Persona entra a la plataforma y elige la opción "Donar".
+2. Sistema lista de campañas/suscripciones y panel de filtros:
+   - Lista de campañas/suscripciones:
+        - Imágen.
+        - Nombre.
+        - Descripción.
+        - Checks de validaciones.
+        - Porcentaje de avance.
+   - Panel de filtros:
+        - Campaña/Suscripción.
+        - Tipo de campaña.
+        - Categoría.
+        - Porcentaje de cumplimiento.
+        - Ordenar por (↑/↓):
+             - 
 4. Usuario completa información y apreta "Crear usuario".
 5. Sistema valida inexistencia de usuario y correo y validez de contraseña.
 6. Sistema crea usuario temporal y envia correo electrónico de validación notificando a la persona.
