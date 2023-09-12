@@ -1,3 +1,7 @@
+using Give.DataAccess.Abstractions;
+using Give.DataAccess.Repositories;
+using Give.Service.Abstractions;
+using Give.Service.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +15,10 @@ builder.Services.AddDbContext<AppDbContext>(
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<ICampañaService, CampañaService>();
+builder.Services.AddScoped<ICampañaRepository, CampañaRepository>();
+
 
 var app = builder.Build();
 

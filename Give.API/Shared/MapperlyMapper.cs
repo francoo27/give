@@ -11,6 +11,7 @@ namespace Give.API.Shared
         [MapDerivedType<Campaña, CampañaDto>]
         public static partial EntityBaseDto Map(EntityBase source);
         public static partial CampañaDto Map(Campaña campañaDto);
+        public static partial List<CampañaDto> Map(List<Campaña> campañaDto);
         //public partial EntityBase Map(EntityBaseDto entityBase);
     }
 }

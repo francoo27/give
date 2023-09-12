@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Give.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 public class AppDbContext : DbContext
 {
@@ -6,4 +7,5 @@ public class AppDbContext : DbContext
         : base(options)
     {
     }
+    public DbSet<Campaña> Campaña { get; set; }
 }
