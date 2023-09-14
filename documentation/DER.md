@@ -3,8 +3,6 @@
 title: Diagrama entidad relacion
 ---
 erDiagram
-    User ||--o{ Category : create
-    User ||--o{ SubCategory : create
     User ||--o{ Campaign : create
     User {
         string id PK
@@ -15,8 +13,27 @@ erDiagram
         string password
         date createdDate
         Role role
-    }  
-    Category ||--o{ Campaign : have 
+    }
+    User ||--o| Suscription : create
+    Suscription {
+        string id PK
+        string createdBy FK "user id"
+        date createdDate
+    }
+    Suscription ||--o| StateSuscriptionState : has
+    StateSuscriptionState {
+        string id PK
+        string suscription FK "suscription_id"
+        string state FK "suscription_state"
+        date createdDate
+    }
+    StateSuscriptionState ||--o| SuscriptionState : represents
+    SuscriptionState {
+        string id PK
+        string name
+        date createdDate
+    }      
+    Category ||--|{ SubCategory : contains 
     Category {
         string id PK
         string name
@@ -36,11 +53,12 @@ erDiagram
         date modifiedDate
         string modifiedBy FK "user id"
     }
-    Campaign ||--o{ ProgressReport : have
-    Campaign ||--|{ SubCategory : have
-    Campaign ||--o{ Milestone : have
-    Campaign ||--o{ Rewards : have
+    Campaign ||--o{ ProgressReport : has
+    Campaign ||--|{ SubCategory : has
+    Campaign ||--o{ Milestone : has
+    Campaign ||--o{ Rewards : has
     Campaign ||--|{ CampaignItems : need
+    Campaign ||--|{ StateCampaignState : has
     Campaign {
         string id PK
         string title
@@ -55,6 +73,19 @@ erDiagram
         date modifiedDate
         string modifiedBy FK "user id"
     }
+    StateCampaignState {
+        string id PK
+        string campaign FK "campaign_id"
+        string state FK "campaign_state"
+        date createdDate
+    }
+    StateCampaignState ||--o| CampaignState : represents
+    CampaignState {
+        string id PK
+        string name
+        date createdDate
+    }  
+
     CampaignItems {
         string id PK
         string campaign_id FK "campaign id"
