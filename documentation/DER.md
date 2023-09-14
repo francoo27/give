@@ -5,6 +5,7 @@ title: Diagrama entidad relacion
 erDiagram
     User ||--o{ Category : create
     User ||--o{ SubCategory : create
+    User ||--o{ Campaign : create
     User {
         string id PK
         string name
