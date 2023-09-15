@@ -1,43 +1,35 @@
 ﻿using Give.DataAccess.Abstractions;
-using Give.DataAccess.Repositories;
 using Give.Service.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Give.Service.Services
 {
     public class EntityBaseService<T> : IEntityBaseService<T> where T : class
     {
         private readonly IEntityBaseRepository<T> _entityBaseRepository;
-        public EntityBaseService(IEntityBaseRepository<T> entityBaseRepository) {
-            _entityBaseRepository = entityBaseRepository;
-        }
-        public Task Delete(int id)
+
+        public EntityBaseService(IEntityBaseRepository<T> entityBaseRepository)
         {
-            throw new NotImplementedException();
+            _entityBaseRepository = entityBaseRepository ?? throw new ArgumentNullException(nameof(entityBaseRepository));
         }
 
-        public async Task<List<T>> GetAllAsync()
+        public async Task DeleteAsync(int id, CancellationToken cancellationToken)
         {
-            return await _entityBaseRepository.GetAllAsync();
+            await _entityBaseRepository.DeleteAsync(id, cancellationToken);
         }
 
-        public async Task<T> GetById(int id)
+        public async Task<List<T>> ToListAsync(CancellationToken cancellationToken)
         {
-            return await _entityBaseRepository.GetById(id);
+            return await _entityBaseRepository.ToListAsync(cancellationToken);
         }
 
-        public async Task Save()
+        public async Task<T> FindAsync(int id, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _entityBaseRepository.FindAsync(id, cancellationToken);
         }
 
-        public async Task Update(T obj)
+        public async Task<T> UpdateAsync(T obj, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _entityBaseRepository.UpdateAsync(obj, cancellationToken);
         }
     }
 }

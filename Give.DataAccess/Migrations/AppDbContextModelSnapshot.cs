@@ -18,7 +18,7 @@ namespace Give.DataAccess.Migrations
                 .HasAnnotation("ProductVersion", "7.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Give.Domain.Models.Campaña", b =>
+            modelBuilder.Entity("Give.Domain.Models.Campaign", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,7 +44,7 @@ namespace Give.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Campaña");
+                    b.ToTable("Campaign");
                 });
 #pragma warning restore 612, 618
         }

@@ -7,5 +7,5 @@ public class AppDbContext : DbContext
         : base(options)
     {
     }
-    public DbSet<Campaña> Campaña { get; set; }
+    public DbSet<Campaign> Campaign { get; set; }
 }

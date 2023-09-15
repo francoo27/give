@@ -1,9 +1,9 @@
 ﻿namespace Give.Service.Dtos
 {
-    public class CampañaDto : EntityBaseDto
+    public class CampaignDto : EntityBaseDto
     {
         public virtual string Name { get; set; }
-        public CampañaDto()
+        public CampaignDto()
         {
         }
     }

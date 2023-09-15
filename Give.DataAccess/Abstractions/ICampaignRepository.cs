@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Give.Service.Abstractions
+namespace Give.DataAccess.Abstractions
 {
-    public interface ICampañaService : IEntityBaseService<Campaña>
+    public interface ICampaignRepository : IEntityBaseRepository<Campaign>
     {
     }
 }

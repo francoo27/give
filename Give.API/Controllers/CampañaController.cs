@@ -3,30 +3,64 @@ using Give.Domain.Models;
 using Give.Service.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using Give.Service.Abstractions;
-using Give.Service.Services;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Give.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class CampañaController : ControllerBase
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    public class CampaignController : ControllerBase
     {
-        private readonly ILogger<CampañaController> _logger;
-        private readonly ICampañaService _campañaService;
+        private readonly ILogger<CampaignController> _logger;
+        private readonly ICampaignService _CampaignService;
 
-        public CampañaController(ILogger<CampañaController> logger, ICampañaService campañaService)
+        public CampaignController(ILogger<CampaignController> logger, ICampaignService CampaignService)
         {
             _logger = logger;
-            _campañaService = campañaService;
+            _CampaignService = CampaignService;
         }
 
-        [HttpGet(Name = "GetCampañas")]
-        public async Task<List<CampañaDto>> GetCampañas()
+        [HttpGet("")]
+        public async Task<List<CampaignDto>> Get(CancellationToken cancellationToken)
         {
-            Campaña campaña = new(2,DateTime.Now, DateTime.Now,"w","e","qweqwe");
-            var campañas = await _campañaService.GetAllAsync();
-            var campañasDto = MapperlyMapper.Map(campañas);
-            return campañasDto;
+            return MapperlyMapper.Map(await _CampaignService.ToListAsync(cancellationToken));
+        }
+
+        [HttpGet("{id}")]
+        public async Task<CampaignDto> GetById(int id, CancellationToken cancellationToken)
+        {
+            return MapperlyMapper.Map(await _CampaignService.FindAsync(id, cancellationToken));
+        }
+
+        [HttpPost("")]
+        public async Task<IActionResult> Post([FromBody] CampaignDto campaignDto, CancellationToken cancellationToken)
+        {
+            if (campaignDto == null)
+            {
+                return BadRequest("Invalid campaign data");
+            }
+
+            var createdCampaign = await _CampaignService.UpdateAsync(MapperlyMapper.Map(campaignDto), cancellationToken);
+
+            // Assuming you have a route for getting the created resource
+            return CreatedAtAction(nameof(GetById), new { id = createdCampaign.Id }, MapperlyMapper.Map(createdCampaign));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id, CancellationToken cancellationToken)
+        {
+            var campaign = await _CampaignService.FindAsync(id, cancellationToken);
+
+            if (campaign == null)
+            {
+                return NotFound();
+            }
+
+            await _CampaignService.DeleteAsync(id, cancellationToken);
+
+            return NoContent();
         }
     }
 }

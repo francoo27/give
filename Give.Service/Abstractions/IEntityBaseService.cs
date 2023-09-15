@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Give.Service.Abstractions
+﻿namespace Give.Service.Abstractions
 {
     public interface IEntityBaseService<T> where T : class
     {
-        Task<List<T>> GetAllAsync();
-        Task<T> GetById(int id);
-        Task Update(T obj);
-        Task Delete(int id);
-        Task Save();
+        Task<List<T>> ToListAsync(CancellationToken cancellationToken);
+        Task<T> FindAsync(int id, CancellationToken cancellationToken);
+        Task<T> UpdateAsync(T obj, CancellationToken cancellationToken);
+        Task DeleteAsync(int id, CancellationToken cancellationToken);
     }
 }

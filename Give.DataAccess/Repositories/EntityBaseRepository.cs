@@ -5,43 +5,45 @@ namespace Give.DataAccess.Repositories
 {
     public class EntityBaseRepository<T> : IEntityBaseRepository<T> where T : class
     {
-        internal readonly AppDbContext _ctx;
-        private DbSet<T>? entity;
-        private ICampañaRepository campañaRepository;
+        private readonly AppDbContext _ctx;
+        private DbSet<T> entity;
 
-        public EntityBaseRepository(AppDbContext ctx) {
-            _ctx = ctx;
+        public EntityBaseRepository(AppDbContext ctx)
+        {
+            _ctx = ctx ?? throw new ArgumentNullException(nameof(ctx));
             entity = _ctx.Set<T>();
         }
 
-        public EntityBaseRepository(ICampañaRepository campañaRepository)
+        public async Task DeleteAsync(int id, CancellationToken cancellationToken = default)
         {
-            this.campañaRepository = campañaRepository;
+            var entityToDelete = await FindAsync(id, cancellationToken);
+            if (entityToDelete != null)
+            {
+                entity.Remove(entityToDelete);
+                await _ctx.SaveChangesAsync(cancellationToken);
+            }
         }
 
-        public async Task Delete(int id)
+        public async Task<List<T>> ToListAsync(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            return await entity.ToListAsync(cancellationToken);
         }
 
-        public async Task<List<T>> GetAllAsync()
+        public async Task<T> FindAsync(int id, CancellationToken cancellationToken = default)
         {
-            return await entity.ToListAsync();
+            return await entity.FindAsync(new object[] { id }, cancellationToken);
         }
 
-        public async Task<T> GetById(int id)
+        public async Task<T> UpdateAsync(T obj, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
-        }
+            if (obj == null)
+            {
+                throw new ArgumentNullException(nameof(obj));
+            }
 
-        public async Task Save()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task Update(T obj)
-        {
-            throw new NotImplementedException();
+            entity.Update(obj);
+            await _ctx.SaveChangesAsync(cancellationToken);
+            return obj;
         }
     }
 }
