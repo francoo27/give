@@ -1,16 +1,13 @@
 using Give.API.Shared;
-using Give.Domain.Models;
 using Give.Service.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using Give.Service.Abstractions;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Give.API.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [Route("api/v{version:apiVersion}/campaign")]
     public class CampaignController : ControllerBase
     {
         private readonly ILogger<CampaignController> _logger;
@@ -29,9 +26,25 @@ namespace Give.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<CampaignDto> GetById(int id, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetById(int id, CancellationToken cancellationToken)
         {
-            return MapperlyMapper.Map(await _CampaignService.FindAsync(id, cancellationToken));
+            try
+            {
+                var campaign = await _CampaignService.FindAsync(id, cancellationToken);
+                if (campaign == null)
+                {
+                    return NotFound();
+                }
+                return Ok(MapperlyMapper.Map(campaign));
+            }
+            catch (Exception ex)
+            {
+                // Log the exception
+                // ...
+
+                // Return a 500 Internal Server Error status code
+                return StatusCode(500, "An internal server error occurred.");
+            }
         }
 
         [HttpPost("")]

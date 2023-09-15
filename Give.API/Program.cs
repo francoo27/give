@@ -28,7 +28,7 @@ builder.Services.AddApiVersioning(options =>
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1.0", new OpenApiInfo { Title = "API", Version = "v1.0" });
-
+    c.SwaggerDoc("v2.0", new OpenApiInfo { Title = "API", Version = "v2.0" });
     // Add API versioning support to Swagger
     c.DocInclusionPredicate((version, desc) =>
     {
@@ -47,6 +47,9 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+
+builder.Services.AddServices();
+
 builder.Services.AddScoped<ICampaignService, CampaignService>();
 builder.Services.AddScoped<ICampaignRepository, CampaignRepository>();
 
@@ -60,6 +63,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1.0/swagger.json", "API v1.0");
+        c.SwaggerEndpoint("/swagger/v2.0/swagger.json", "API v2.0");
     });
 }
 
