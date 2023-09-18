@@ -3,7 +3,6 @@
 title: Diagrama entidad relacion
 ---
 erDiagram
-    User ||--o{ Campaign : create
     User {
         string id PK
         string name
@@ -12,25 +11,43 @@ erDiagram
         string login
         string password
         date createdDate
-        Role role
+        enum status "estado del usuario"
+        boolean isVerified "verificacion del email"
     }
-    User ||--o| Suscription : create
-    Suscription {
+    User ||--o| NaturalPerson : is
+    User ||--o| LegalPerson : is
+
+    
+    LegalPerson {
         string id PK
-        string createdBy FK "user id"
+    }
+    LegalPerson ||--|| NaturalPerson : represent
+
+    NaturalPerson {
+        string id PK
+    }
+    NaturalPerson ||--o{ Campaign : create
+    NaturalPerson ||--o| Channel : create
+    NaturalPerson ||--o| Admin : is
+
+    Admin {
+        string id PK
+    }
+
+
+    Channel {
+        string id PK
+        string createdBy
         date createdDate
+        date modifiedDate
+        string modifiedBy
     }
-    Suscription ||--o| StateSuscriptionState : has
-    StateSuscriptionState {
+    Channel ||--o| ChannelState : has
+    ChannelState {
         string id PK
-        string suscription FK "suscription_id"
-        string state FK "suscription_state"
-        date createdDate
-    }
-    StateSuscriptionState ||--o| SuscriptionState : represents
-    SuscriptionState {
-        string id PK
-        string name
+        string chanel_id FK
+        enum status
+        string createdBy
         date createdDate
     }      
     Category ||--|{ SubCategory : contains 
@@ -38,27 +55,29 @@ erDiagram
         string id PK
         string name
         string description
+        enum status
         date createdDate 
-        string createdBy FK "user id"
+        string createdBy
         date modifiedDate
-        string modifiedBy FK "user id"
+        string modifiedBy
     }
     SubCategory {
         string id PK
         string name
         string description
         string category_id FK "category id"
+        enum status
         date createdDate 
-        string createdBy FK "user id"
+        string createdBy
         date modifiedDate
-        string modifiedBy FK "user id"
+        string modifiedBy
     }
     Campaign ||--o{ ProgressReport : has
-    Campaign ||--|{ SubCategory : has
+    Campaign ||--|| SubCategory : has
     Campaign ||--o{ Milestone : has
     Campaign ||--o{ Rewards : has
     Campaign ||--|{ CampaignItems : need
-    Campaign ||--|{ StateCampaignState : has
+    Campaign ||--|{ CampaignState : has
     Campaign {
         string id PK
         string title
@@ -66,26 +85,20 @@ erDiagram
         string personal
         date startDate
         date endDate
-        CampaignType type "enum to describe campaign types"
-        string category_id FK "category id"
+        enum type "enum to describe campaign types"
+        string sub_category_id FK "sub category id"
         date createdDate 
-        string createdBy FK "user id"
+        string createdBy
         date modifiedDate
-        string modifiedBy FK "user id"
+        string modifiedBy
     }
-    StateCampaignState {
-        string id PK
-        string campaign FK "campaign_id"
-        string state FK "campaign_state"
-        date createdDate
-    }
-    StateCampaignState ||--o| CampaignState : represents
     CampaignState {
         string id PK
-        string name
+        string campaign_id FK "campaign id"
+        enum status
+        string createdBy
         date createdDate
     }  
-
     CampaignItems {
         string id PK
         string campaign_id FK "campaign id"
@@ -93,12 +106,19 @@ erDiagram
         string description
         number amount
         number price
+        string createdBy
+        date createdDate
+        date modifiedDate
+        string modifiedBy
     }
     ProgressReport {
         string id PK
+        string campaign_id FK "campaign id"
         string description
         date createdDate 
-        string createdBy FK "user id"
+        string createdBy
+        date modifiedDate
+        string modifiedBy
     }
     Milestone {
         string id PK
@@ -107,7 +127,9 @@ erDiagram
         number amountTarget "amount of money to complete the milestone"
         date limitDate
         date createdDate 
-        string createdBy FK "user id"
+        string createdBy
+        date modifiedDate
+        string modifiedBy
     }
     Rewards {
         string id PK
@@ -116,7 +138,32 @@ erDiagram
         string description
         number minAmount
         date createdDate 
-        string createdBy FK "user id"
+        string createdBy
+        date modifiedDate
+        string modifiedBy
     }
 
 ```
+
+---
+
+### Estados (baja logica)
+
+Para evitar usar *borrado en cascada* en entidades criticas como usuario, camapaña, etc. Vamos a utilizar un estado interno para identificar esta situación.
+
+- Activo
+
+- Inactivo
+    
+
+### Auditoria
+
+Para mantener *trazabilidad* de los cambios en las distintas entidades vamos a registrar los siguientes datos:
+
+- Fecha de creación
+
+- Creado por
+
+- Fecha de modificación
+
+- Modificado por
