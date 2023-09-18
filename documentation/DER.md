@@ -149,7 +149,7 @@ erDiagram
 
 ### Estados (baja logica)
 
-Para evitar usar *borrado en cascada* en entidades criticas como usuario, camapaña, etc. Vamos a utilizar un estado interno para identificar esta situación.
+Para evitar usar **borrado en cascada** en entidades criticas como usuario, camapaña, etc. Vamos a utilizar un estado interno para identificar esta situación.
 
 - Activo
 
@@ -158,7 +158,7 @@ Para evitar usar *borrado en cascada* en entidades criticas como usuario, camapa
 
 ### Auditoria
 
-Para mantener *trazabilidad* de los cambios en las distintas entidades vamos a registrar los siguientes datos:
+Para mantener **trazabilidad** de los cambios en las distintas entidades vamos a registrar los siguientes datos:
 
 - Fecha de creación
 
