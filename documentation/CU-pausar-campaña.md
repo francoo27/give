@@ -33,7 +33,8 @@
 4. El sistema muestra opciones de gestión para la campaña seleccionada.
 5. El usuario elige la opción "Pausar Campaña".
 6. El sistema solicita una razón para pausar la campaña.
-7. El usuario proporciona una razón válida y temporal para la pausa.
+    1. Select con la [razon](#razones) de porque se pausa
+    2. Descripción (opcional)
 8. El sistema pausa la campaña y registra la razón proporcionada.
 9. El sistema notifica al usuario que la campaña se ha pausado con éxito y proporciona un número de referencia.
 
@@ -50,16 +51,8 @@ stateDiagram
   Pausada --> [*]
 ```
 
-**Fracaso:** Si el usuario no puede proporcionar una razón válida , el caso de uso se cancela y la campaña no se pausa.
-```mermaid
-stateDiagram
-    direction LR
-  [*] --> Activo : 
-  Activo --> [*]
-```
+## Razones
 
-
-**Informacion**
 1. **Necesidad de Reevaluación de Objetivos**: Si los objetivos de financiamiento no se están alcanzando y es necesario reevaluar la cantidad requerida o los hitos establecidos.
 
 2. **Cambios en la Estrategia de Recompensas**: Si es necesario ajustar las recompensas ofrecidas a los patrocinadores o revisar los niveles de contribución.
