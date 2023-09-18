@@ -35,10 +35,13 @@
 6. El sistema solicita una razón para pausar la campaña.
     1. Select con la [razon](#razones) de porque se pausa
     2. Descripción (opcional)
-8. El sistema pausa la campaña y registra la razón proporcionada.
+8. El sistema pausa la campaña y registra la razón proporcionada. 
 9. El sistema notifica al usuario que la campaña se ha pausado con éxito y proporciona un número de referencia.
 
 **CAMINOS ALTERNATIVOS:**
+
+5a. La campaña ya fue pausada al menos una vez ([RN-006](./reglas-de-negocio.md/#6))
+  - El sistema muestra un mensaje de error al usuario indicando porque no se puede pausar la misma.
 
 **POSTCONDICIONES (de sistema):**
 
