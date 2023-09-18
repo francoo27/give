@@ -1,5 +1,7 @@
 ﻿using Give.DataAccess.Abstractions;
+using Give.DataAccess.Repositories;
 using Give.Service.Abstractions;
+using System.Threading;
 
 namespace Give.Service.Services
 {
@@ -11,25 +13,12 @@ namespace Give.Service.Services
         {
             _entityBaseRepository = entityBaseRepository ?? throw new ArgumentNullException(nameof(entityBaseRepository));
         }
+        public async Task<List<T>> GetAllNoTrackingAsync(CancellationToken cancellationToken) => await _entityBaseRepository.GetAllNoTrackingAsync(cancellationToken);
 
-        public async Task DeleteAsync(int id, CancellationToken cancellationToken)
-        {
-            await _entityBaseRepository.DeleteAsync(id, cancellationToken);
-        }
+        public async Task<T> FindByIdAsync(int id, CancellationToken cancellationToken) => await _entityBaseRepository.FindByIdAsync(id, cancellationToken);
 
-        public async Task<List<T>> ToListAsync(CancellationToken cancellationToken)
-        {
-            return await _entityBaseRepository.ToListAsync(cancellationToken);
-        }
+        public void Delete(T entity) => _entityBaseRepository.Delete(entity);
 
-        public async Task<T> FindAsync(int id, CancellationToken cancellationToken)
-        {
-            return await _entityBaseRepository.FindAsync(id, cancellationToken);
-        }
-
-        public async Task<T> UpdateAsync(T obj, CancellationToken cancellationToken)
-        {
-            return await _entityBaseRepository.UpdateAsync(obj, cancellationToken);
-        }
+        public void Update(T entity) => _entityBaseRepository.Update(entity);
     }
 }

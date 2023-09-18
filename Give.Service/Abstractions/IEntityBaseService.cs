@@ -2,9 +2,9 @@
 {
     public interface IEntityBaseService<T> where T : class
     {
-        Task<List<T>> ToListAsync(CancellationToken cancellationToken);
-        Task<T> FindAsync(int id, CancellationToken cancellationToken);
-        Task<T> UpdateAsync(T obj, CancellationToken cancellationToken);
-        Task DeleteAsync(int id, CancellationToken cancellationToken);
+        Task<List<T>> GetAllNoTrackingAsync(CancellationToken cancellationToken);
+        Task<T> FindByIdAsync(int id, CancellationToken cancellationToken);
+        void Update(T entity);
+        void Delete(T entity);
     }
 }

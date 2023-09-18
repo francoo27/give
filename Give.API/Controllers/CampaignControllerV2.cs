@@ -23,7 +23,7 @@ namespace Give.API.Controllers
         [HttpGet("")]
         public async Task<List<CampaignDto>> Get(CancellationToken cancellationToken)
         {
-            return MapperlyMapper.Map(await _CampaignService.ToListAsync(cancellationToken));
+            return MapperlyMapper.Map(await _CampaignService.GetAllNoTrackingAsync(cancellationToken));
         }
 
         [HttpGet("{id}")]
@@ -31,7 +31,7 @@ namespace Give.API.Controllers
         {
             try
             {
-                var campaign = await _CampaignService.FindAsync(id, cancellationToken);
+                var campaign = await _CampaignService.FindByIdAsync(id, cancellationToken);
                 if (campaign == null)
                 {
                     return NotFound();
@@ -56,16 +56,16 @@ namespace Give.API.Controllers
                 return BadRequest("Invalid campaign data");
             }
 
-            var createdCampaign = await _CampaignService.UpdateAsync(MapperlyMapper.Map(campaignDto), cancellationToken);
+             _CampaignService.Update(MapperlyMapper.Map(campaignDto));
 
             // Assuming you have a route for getting the created resource
-            return CreatedAtAction(nameof(GetById), new { id = createdCampaign.Id }, MapperlyMapper.Map(createdCampaign));
+            return CreatedAtAction(nameof(GetById), new { id = campaignDto.Id }, MapperlyMapper.Map(campaignDto));
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id, CancellationToken cancellationToken)
         {
-            var campaign = await _CampaignService.FindAsync(id, cancellationToken);
+            var campaign = await _CampaignService.FindByIdAsync(id, cancellationToken);
 
             if (campaign == null)
             {
@@ -74,7 +74,7 @@ namespace Give.API.Controllers
 
             try
             {
-                await _CampaignService.DeleteAsync(id, cancellationToken);
+                _CampaignService.Delete(campaign);
             }
             catch (Exception)
             {

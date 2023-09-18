@@ -3,47 +3,72 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Give.DataAccess.Repositories
 {
-    public class EntityBaseRepository<T> : IEntityBaseRepository<T> where T : class
+    public class EntityBaseRepository<T> : IEntityBaseRepository<T>, IDisposable, IAsyncDisposable where T : class
     {
         private readonly AppDbContext _ctx;
-        private DbSet<T> entity;
+        private DbSet<T> _entity;
+        private bool disposedValue;
 
         public EntityBaseRepository(AppDbContext ctx)
         {
             _ctx = ctx ?? throw new ArgumentNullException(nameof(ctx));
-            entity = _ctx.Set<T>();
+            _entity = _ctx.Set<T>();
         }
 
-        public async Task DeleteAsync(int id, CancellationToken cancellationToken = default)
+        public void Update(T entity) => _entity.Update(entity);
+        public void Delete(T entity) => _entity.Remove(entity);
+        public void DeleteRange(IEnumerable<T> entities) => _entity.RemoveRange(entities);
+        public void Save() => _ctx.SaveChanges();
+
+        public T FindById(int id) => _entity.Find(id);
+        public async Task<List<T>> GetAllNoTrackingAsync(CancellationToken cancellationToken = default) => await _entity.AsNoTracking().ToListAsync(cancellationToken);
+        public async Task<List<T>> GetAllAsync(CancellationToken cancellationToken = default) => await _entity.ToListAsync(cancellationToken);
+        public async Task<T> FindByIdAsync(int id, CancellationToken cancellationToken = default) => await _entity.FindAsync(new object[] { id }, cancellationToken);
+        public async Task AddAsync(T entity, CancellationToken cancellationToken = default) => await _entity.AddAsync(entity, cancellationToken);
+        public async Task SaveAsync(CancellationToken cancellationToken = default) => await _ctx.SaveChangesAsync(cancellationToken);
+
+        public void Dispose()
         {
-            var entityToDelete = await FindAsync(id, cancellationToken);
-            if (entityToDelete != null)
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
+
+        public async ValueTask DisposeAsync()
+        {
+            await DisposeAsyncCore();
+            Dispose(disposing: false);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
             {
-                entity.Remove(entityToDelete);
-                await _ctx.SaveChangesAsync(cancellationToken);
+                if (disposing)
+                {
+                    // Dispose of managed resources here
+                    _ctx.Dispose();
+                }
+
+                // Free unmanaged resources (unmanaged objects) and override finalizer if needed
+
+                disposedValue = true;
             }
         }
 
-        public async Task<List<T>> ToListAsync(CancellationToken cancellationToken = default)
+        private async ValueTask DisposeAsyncCore()
         {
-            return await entity.ToListAsync(cancellationToken);
-        }
-
-        public async Task<T> FindAsync(int id, CancellationToken cancellationToken = default)
-        {
-            return await entity.FindAsync(new object[] { id }, cancellationToken);
-        }
-
-        public async Task<T> UpdateAsync(T obj, CancellationToken cancellationToken = default)
-        {
-            if (obj == null)
+            if (!disposedValue)
             {
-                throw new ArgumentNullException(nameof(obj));
+                // Dispose of managed resources here asynchronously
+                await _ctx.DisposeAsync();
+                disposedValue = true;
             }
+        }
 
-            entity.Update(obj);
-            await _ctx.SaveChangesAsync(cancellationToken);
-            return obj;
+        ~EntityBaseRepository()
+        {
+            Dispose(disposing: false);
         }
     }
 }
