@@ -8,3 +8,4 @@
 | <span id="6">RN-006</span>      | Una campaña se puede pausar por única vez |
 | <span id="7">RN-007</span>      | Una campaña puede estar pausada maximo por 3 dias habiles |
 | <span id="8">RN-008</span>      | Cuando una campaña se pausa, la fecha de finalización se mueve por la cantidad de dias que estuvo pausada (dias habiles)|
+| <span id="9">RN-009</span>      | Cuando se informa el avance un proyecto se genera una cronologia de avances donde se almacena la fecha de creación y el usuario que genero el informe de avance |
