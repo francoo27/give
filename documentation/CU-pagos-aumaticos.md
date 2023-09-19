@@ -48,9 +48,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;2.ii.a.3 Fin CU.\
 2.iii.**\<En lugar de\>** Checkout API no valida fondos suficientes.\
 &nbsp;&nbsp;&nbsp;&nbsp;2.iii.a.1 Checkout API envía mensaje a Sistema.\
-&nbsp;&nbsp;&nbsp;&nbsp;2.iii.a.2 Sistema envía notificación al usuario y actualiza fecha de pago para 3 días en el futuro. [RN-007](./reglas-de-negocio.md/#7)\
+&nbsp;&nbsp;&nbsp;&nbsp;2.iii.a.2 Sistema envía notificación al usuario y actualiza fecha de pago para 3 días en el futuro. [RN-0011](./reglas-de-negocio.md/#11)\
 &nbsp;&nbsp;&nbsp;&nbsp;2.iii.a.3 Fin CU.\
-2.iii.**\<En lugar de\>** Checkout API no valida fondos suficiente (5 intento) [RN-006](./reglas-de-negocio.md/#6).\
+2.iii.**\<En lugar de\>** Checkout API no valida fondos suficiente (5 intento) [RN-0010](./reglas-de-negocio.md/#10).\
 &nbsp;&nbsp;&nbsp;&nbsp;2.iii.b.1 Checkout API envía mensaje a Sistema.\
 &nbsp;&nbsp;&nbsp;&nbsp;2.iii.b.2 Sistema envía notificación al usuario.\
 &nbsp;&nbsp;&nbsp;&nbsp;2.iii.b.3 Fin CU.
