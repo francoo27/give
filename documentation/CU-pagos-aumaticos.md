@@ -62,3 +62,6 @@
 **Éxito alternativo:** Se realiza contribución periódica a suscripción.
 
 **Fracaso:** Se actualizan fechas de pago o hay 5 intentos fallidos de pago.
+<hr>
+
+[Volver a README](../README.md)

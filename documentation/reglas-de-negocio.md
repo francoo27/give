@@ -11,3 +11,6 @@
 | <span id="9">RN-009</span>      | Cuando se informa el avance un proyecto se genera una cronologia de avances donde se almacena la fecha de creación y el usuario que genero el informe de avance |
 | <span id="10">RN-0010</span>      | Los pagos periódicos fallidos por fondos insuficientes se volverán a intentar 5 veces. |
 | <span id="11">RN-0011</span>      | Los pagos periódicos fallidos por fondos se volverán a intentar 3 días después. |
+<hr>
+
+[Volver a README](../README.md)
