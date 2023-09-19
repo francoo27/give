@@ -44,8 +44,8 @@
 
 5.**\<Durante\>** No existe coincidencia Usuario-Correo.\
 &nbsp;&nbsp;&nbsp;&nbsp;5.a.1 Notifica al usuario. Vuelve al paso 1.\
-7.**\<Previo\>** Pasan 7 días desde pedido de reinicio y no se efectúa el cambio. [RN-01]\ 
-&nbsp;&nbsp;&nbsp;&nbsp;7.a.1 Sistema da de baja pedido de cambio de contraseña. Fin CU. [RN-02]\
+7.**\<Previo\>** Pasan 7 días desde pedido de reinicio y no se efectúa el cambio. [RN-008](./reglas-de-negocio.md/#8)\ 
+&nbsp;&nbsp;&nbsp;&nbsp;7.a.1 Sistema da de baja pedido de cambio de contraseña. Fin CU. [RN-009](./reglas-de-negocio.md/#9)\
 7.**\<Previo\>** Usuario inicia sesión normalmente.\
 &nbsp;&nbsp;&nbsp;&nbsp;7.b.1 Sistema da de baja pedido de cambio de contraseña. Fin CU.\
 10.**\<Posterior\>** Los campos no son iguales.\
