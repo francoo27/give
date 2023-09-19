@@ -13,3 +13,6 @@
 | <span id="11">RN-0011</span>      | Los pagos periódicos fallidos por fondos se volverán a intentar 3 días después. |
 | <span id="12">RN-0012</span> | Una solicitud de cambio de contrasaña tiene una duración límite de 7 días. |
 | <span id="13">RN-0013</span> | Una solicitud de cambio de contrasaña vencida deshabilita link de restauración. |
+<hr>
+
+[Volver a README](../README.md)

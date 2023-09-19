@@ -37,3 +37,6 @@ Las cuatro respuestas básicas de la gestión de riesgos son las siguientes:
 - **Transferir**: Trasladar todo el riesgo a terceros para disminuir el riesgo en el proyecto.
 - **Mitigar**: Disminuir la probabilidad de que se produzca el riesgo al establecer acciones anticipadas para evitar que suceda.
 - **Evitar**: Contrarrestar los riesgos que van surgiendo mediante estrategias. Esto puede implicar cambios en el cronograma o el alcance del proyecto para eliminar la amenaza del riesgo.
+<hr>
+
+[Volver a README](../README.md)

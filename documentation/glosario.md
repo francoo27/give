@@ -9,3 +9,6 @@
 | _Tiers_        | Son las diferentes categorias que puede tener una suscripción                                                                                                                                                                                                                  |
 | Baneado        | Del inglés _ban_, significa que se bloquea el acceso al usuario (aplica tambien a sus acciones: campañas, donaciones, etc)   
 | Informe de avance| Es el instrumento que tiene los usuarios creadores de campañas para poder trasmitir como va la misma                                                                                                                                                                                                           |
+<hr>
+
+[Volver a README](../README.md)

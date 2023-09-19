@@ -69,3 +69,6 @@
 
 9a. El usuario no está validado.
    10.a.1 Se aplica [RN-001](./reglas-de-negocio.md/#1) Fijando un tope a la campaña.
+<hr>
+
+[Volver a README](../README.md)
