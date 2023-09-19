@@ -35,3 +35,6 @@ stateDiagram-v2
     ELIMINADA --> [*]
     FINALIZADA --> [*]
 ```
+<hr>
+
+[Volver a README](../README.md)

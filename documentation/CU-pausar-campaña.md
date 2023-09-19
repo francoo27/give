@@ -81,3 +81,6 @@ stateDiagram
 12. **Otro**: El usuario provee una descripcion que no cuadre dentro de la lista previa.
 
 13. **MODERACION**: Moderador pausa.
+<hr>
+
+[Volver a README](../README.md)

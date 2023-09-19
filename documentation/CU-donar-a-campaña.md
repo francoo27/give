@@ -98,3 +98,6 @@
 **Éxito alternativo:** Se realiza contribución periódica a campaña.
 
 **Fracaso:** No se realiza contribución, ni registro de periodicidad de pago.
+<hr>
+
+[Volver a README](../README.md)
