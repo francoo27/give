@@ -2,6 +2,8 @@
 
 ## Archivos de Documentación
 
+### Casos de Uso
+- [casos-de-uso-resumen.md](documentation/casos-de-uso-resumen.md): Resumen de Casos de Uso.
 - [CU-Inicio-Sesión.md](documentation/CU-Inicio-Sesión.md): Caso de uso - Inicio de Sesión.
 - [CU-Recupero-Contraseña.md](documentation/CU-Recupero-Contraseña.md): Caso de uso - Recuperación de Contraseña.
 - [CU-Validación-Persona.md](documentation/CU-Validación-Persona.md): Caso de uso - Validación de Persona.
@@ -13,8 +15,11 @@
 - [CU-informar-avance-campaña.md](documentation/CU-informar-avance-campaña.md): Caso de uso - Informar Avance de Campaña.
 - [CU-pagos-automaticos.md](documentation/CU-pagos-automaticos.md): Caso de uso - Pagos Automáticos.
 - [CU-pausar-campaña.md](documentation/CU-pausar-campaña.md): Caso de uso - Pausar Campaña.
-- [casos-de-uso-resumen.md](documentation/casos-de-uso-resumen.md): Resumen de Casos de Uso.
-- [glosario.md](documentation/glosario.md): Glosario de Términos.
+
+### Maquinas de estados
 - [maquina-de-estados-campaña.md](documentation/maquina-de-estados-campaña.md): Máquina de Estados - Campaña.
+
+### Documentación complementaria
+- [glosario.md](documentation/glosario.md): Glosario de Términos.
 - [reglas-de-negocio.md](documentation/reglas-de-negocio.md): Reglas de Negocio.
 - [riesgos.md](documentation/riesgos.md): Identificación de Riesgos.
