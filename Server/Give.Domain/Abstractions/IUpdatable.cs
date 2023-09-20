@@ -2,7 +2,7 @@
 {
     public interface IUpdatable : ICreateable
     {
-        DateTime UpdatedDate { get; set; }
-        string UpdatedBy { get; set; }
+        DateTime? UpdatedDate { get; set; }
+        string? UpdatedBy { get; set; }
     }
 }

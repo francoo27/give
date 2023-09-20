@@ -22,7 +22,7 @@ namespace Give.API.Controllers
         [HttpGet("")]
         public async Task<List<CampaignDto>> Get(CancellationToken cancellationToken)
         {
-            return MapperlyMapper.Map(await _CampaignService.GetAllNoTrackingAsync(cancellationToken));
+            return CampaignMapper.Map(await _CampaignService.GetAllNoTrackingAsync(cancellationToken));
         }
 
         [HttpGet("{id}")]
@@ -35,7 +35,7 @@ namespace Give.API.Controllers
                 {
                     return NotFound();
                 }
-                return Ok(MapperlyMapper.Map(campaign));
+                return Ok(CampaignMapper.Map(campaign));
             }
             catch (Exception ex)
             {
@@ -57,9 +57,9 @@ namespace Give.API.Controllers
 
             try
             {
-                _CampaignService.Update(MapperlyMapper.Map(campaignDto));
+                await _CampaignService.AddAsync(CampaignMapper.MapPost(campaignDto), cancellationToken);
                 // Assuming you have a route for getting the created resource
-                return CreatedAtAction(nameof(GetById), new { id = campaignDto.Id }, MapperlyMapper.Map(campaignDto));
+                return CreatedAtAction(nameof(GetById), new { id = campaignDto.Id }, CampaignMapper.Map(campaignDto));
             }
             catch (Exception)
             {

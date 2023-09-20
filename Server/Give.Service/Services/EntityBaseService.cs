@@ -1,7 +1,6 @@
 ﻿using Give.DataAccess.Abstractions;
-using Give.DataAccess.Repositories;
 using Give.Service.Abstractions;
-using System.Threading;
+using Microsoft.EntityFrameworkCore;
 
 namespace Give.Service.Services
 {
@@ -17,8 +16,22 @@ namespace Give.Service.Services
 
         public async Task<T> FindByIdAsync(int id, CancellationToken cancellationToken) => await _entityBaseRepository.FindByIdAsync(id, cancellationToken);
 
-        public void Delete(T entity) => _entityBaseRepository.Delete(entity);
+        public async Task AddAsync(T entity, CancellationToken cancellationToken)
+        {
+            await _entityBaseRepository.AddAsync(entity, cancellationToken);
+            _entityBaseRepository.Save();
+        }
 
-        public void Update(T entity) => _entityBaseRepository.Update(entity);
+        public void Delete(T entity)
+        {
+            _entityBaseRepository.Delete(entity);
+            _entityBaseRepository.Save();
+        }
+
+        public void Update(T entity)
+        {
+            _entityBaseRepository.Update(entity);
+            _entityBaseRepository.Save();
+        }
     }
 }
