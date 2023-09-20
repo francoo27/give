@@ -56,3 +56,6 @@
 **Éxito alternativo:** Sesión activa mediante usuario enlazado a otro medio.
 
 **Fracaso:** No se inicia sesión.
+<hr>
+
+[Volver a README](../README.md)

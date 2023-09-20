@@ -66,3 +66,6 @@
 **Éxito alternativo:** Usuario de persona jurídica validado.
 
 **Fracaso:** Usuario sin validar.
+<hr>
+
+[Volver a README](../README.md)

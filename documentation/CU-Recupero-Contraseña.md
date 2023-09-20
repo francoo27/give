@@ -60,3 +60,6 @@
 **Éxito alternativo:**
 
 **Fracaso:** Sin cambios en contraseña
+<hr>
+
+[Volver a README](../README.md)
