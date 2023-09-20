@@ -60,3 +60,6 @@
 **Éxito alternativo:** Se registra usuario enlazado a cuenta de Facebook/etc.
 
 **Fracaso:** No se crea usuario y/o usuario temporal es eliminado.
+<hr>
+
+[Volver a README](../README.md)
