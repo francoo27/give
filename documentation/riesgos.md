@@ -18,8 +18,7 @@
 | R8 | Dificultades financieras | Sostenibilidad financiera en riesgo | Pérdida constante de ingresos | Medio 🟡| Alto 🟠| 12 | Revisar el modelo de negocio y buscar inversionistas | Área de Finanzas |
 | R9 | Dependencia de terceros | Interrupción del servicio debido a problemas con proveedores | Informes de fallos en servicios de terceros | Bajo🔵 | Medio🟡 | 6 | Identificar proveedores alternativos y plan de contingencia | Área de Operaciones |
 | R10 | Cambios en las tendencias del mercado | Pérdida de relevancia | Cambios en la preferencia de los usuarios | Alto🟠 | Medio🟡 | 12 | Mantenerse al tanto de las tendencias y adaptarse | Área de Estrategia |
-
-
+| R11 | Cambios en los costos de recursos externos | Perdida de competividad debido a aumento en comisiones | Notificación de proveedor de aumento de costos. Perdida de valor de la moneda argentina. | Alto 🟠 | Bajo🔵| 8 | Identificar proveedores alternativos, analizar factibilidad operativa y financiera | Área de Finanzas/Área de Estrategia/Área de Operaciones |
 
 ## La tabla de riesgos se compone generalmente de los siguientes elementos:
 - **ID**: Un código o número identificador del riesgo.
@@ -28,7 +27,7 @@
 - **Síntoma**: Identifica y describe una señal de alarma o advertencia de que el riesgo puede ocurrir. Es importante mencionar que no todos los riesgos tienen síntomas.
 - **Probabilidad**: Evalúa la probabilidad de que el riesgo suceda. Esta probabilidad puede ser alta, media o baja dependiendo del riesgo.
 - **Impacto**: Evalúa el grado de impacto en el proyecto en caso de que el riesgo ocurra. Este impacto puede ser alto, medio o bajo dependiendo del riesgo en sí mismo.
-- **Prioridad**: Resultado de multiplicar _Impacto_ y _Probabilidad_ orden natural de los riegos.
+- **Prioridad**: Resultado de multiplicar _Impacto_ y _Probabilidad_ orden natural de los riesgos.
 - **Respuestas**: Especifica la acción que el equipo de proyecto llevará a cabo para eliminar, trasladar o mitigar el riesgo.
 - **Responsable**: Nombre o rol del responsable de llevar a cabo la acción de respuesta al riesgo.
 
