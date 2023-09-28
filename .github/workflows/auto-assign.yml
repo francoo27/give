@@ -2,6 +2,8 @@ name: 'Auto Assign reviews'
 on:
     pull_request:
         types: [ opened, ready_for_review ]
+permissions:
+  pull-requests: write
 
 jobs:
   add-reviews:
@@ -9,4 +11,4 @@ jobs:
     steps:
       - uses: kentaro-m/auto-assign-action@v1.2.5
         with:
-          configuration-path: '.github/reviewers.yml'
+            repo-token: "${{ secrets.GITHUB_TOKEN }}"
