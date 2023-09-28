@@ -11,3 +11,7 @@ skipKeywords:
   - wip
 
 numberOfReviewers: 0
+
+paths:
+  - "documentation/**"
+  - "**.md"
