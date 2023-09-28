@@ -47,4 +47,6 @@ Las cuatro respuestas básicas de la gestión de riesgos son las siguientes:
 - **Evitar**: Contrarrestar los riesgos que van surgiendo mediante estrategias. Esto puede implicar cambios en el cronograma o el alcance del proyecto para eliminar la amenaza del riesgo.
 <hr>
 
+test
+
 [Volver a README](../README.md)
