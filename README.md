@@ -3,6 +3,7 @@
 [![Issues][issues-shield]][issues-url]
 
 # Give
+
 ## Índice
 
 - [Acerca del proyecto](#acerca-del-proyecto)
@@ -82,6 +83,7 @@ El sistema valora a las empresas por sus proyectos exitosos y la opinión de la 
 - [glosario.md](documentation/glosario.md): Glosario de Términos.
 - [reglas-de-negocio.md](documentation/reglas-de-negocio.md): Reglas de Negocio.
 - [riesgos.md](documentation/riesgos.md): Identificación de Riesgos.
+- [gantt.md](documentation/gantt.md): Gantt del proyecto.
 
 
 [license-shield]: https://img.shields.io/github/license/francoo27/give.svg?style=for-the-badge
