@@ -1,7 +1,6 @@
 name: 'Auto Assign reviews'
 on:
-    pull_request_target:
-        paths: [ "documentation/**", "**.md" ]
+    pull_request:
         types: [ opened, ready_for_review ]
 
 jobs:
