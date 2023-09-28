@@ -3,7 +3,7 @@
 [![Issues][issues-shield]][issues-url]
 
 # Give
-# Índice
+## Índice
 
 - [Acerca del proyecto](#acerca-del-proyecto)
     - [Campañas](#Campañas)
