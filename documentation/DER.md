@@ -16,8 +16,11 @@ erDiagram
     }
     User ||--o| NaturalPerson : is
     User ||--o| LegalPerson : is
+    User ||--o| Contribution : make
+    User ||--o{ PaymentMethod : has
+    User ||--o{ ChangePasswordRequest : request
+    User ||--o{ SupportTicket : creates
 
-    
     LegalPerson {
         string id PK
     }
@@ -33,7 +36,15 @@ erDiagram
     Admin {
         string id PK
     }
-
+    Admin ||--o{ SupportTicket : attend
+    Admin ||--o{ LegalPerson : verify
+    
+    Contribution {
+        date paymentDate
+        number amount
+        
+    }
+    Contribution ||--o| PaymentMethod : Use
 
     Channel {
         string id PK
@@ -43,6 +54,8 @@ erDiagram
         string modifiedBy
     }
     Channel ||--o| ChannelState : has
+    Channel ||--|| Contribution : receive
+
     ChannelState {
         string id PK
         string chanel_id FK
@@ -78,6 +91,10 @@ erDiagram
     Campaign ||--o{ Rewards : has
     Campaign ||--|{ CampaignItems : need
     Campaign ||--|{ CampaignState : has
+    Campaign ||--|{ Contribution : receive
+    Campaign ||--|{ preValidationProof : has
+    Campaign ||--|{ postValidationProof : has
+
     Campaign {
         string id PK
         string title
@@ -87,6 +104,8 @@ erDiagram
         date endDate
         enum type "enum to describe campaign types"
         string sub_category_id FK "sub category id"
+        boolean preValideted
+        boolean postValideted
         date createdDate 
         string createdBy
         date modifiedDate
@@ -143,6 +162,57 @@ erDiagram
         string modifiedBy
     }
 
+    preValidationProof {
+        string id PK
+        string campaign_id FK "campaign id"
+        file document
+        date uploadDate
+        string uploadedBy FK "User id"
+        string status
+        string attendedBy FK "Admin id"
+    }
+
+    postValidationProof {
+        string id PK
+        string campaign_id FK "campaign id"
+        file document
+        date uploadDate
+        string uploadedBy FK "User id"
+        string status
+        string attendedBy FK "Admin id"
+    }
+
+    PaymentMethod {
+        string id PK
+    }
+
+    ChangePasswordRequest {
+        string id PK
+        date dateRequest
+        string user_id FK "User id"
+        string url
+        boolean used
+        boolean expired
+    }
+
+    SupportTicket {
+        string id PK
+        string createdBy FK "User id"
+        date createdAt
+        string attendedBy FK "Admin id"
+        string status
+        string ticketType
+        string description
+        string result
+    }
+
+    
+    SupportTicket ||--o| FraudClaim : is
+    FraudClaim {
+        string acussed FK "User id"
+    }
+    FraudClaim ||--o| User : acusse
+    
 ```
 
 ---
