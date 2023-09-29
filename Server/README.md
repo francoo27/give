@@ -46,6 +46,23 @@ Para conectarse desde pgAdmin a la BD con postgresql hay que:
 
 ### Development
 
+Levantar la Api 🚀
+
+```
+dotnet run
+```
+
+Generar archivos de _entity framework_
+
+```
+dotnet ef migrations add AddProperties  --project Give.DataAccess --startup-project Give.API
+```
+
+Correr _migration_
+
+```
+dotnet ef database update --project Give.DataAccess --startup-project Give.API
+```
 <hr>
 
 [Volver a README](../README.md)
