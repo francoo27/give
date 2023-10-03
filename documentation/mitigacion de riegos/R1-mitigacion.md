@@ -6,7 +6,7 @@
 
 ## Problematica
 
-Segun la [Ley 25.326](http://servicios.infoleg.gob.ar/infolegInternet/anexos/60000-64999/64790/norma.htm) articulo 9 establece que _"que **el responsable del archivo de datos** debe tomar las medidas técnicas y organizativas necesarias para **garantizar la seguridad y confidencialidad de los datos personales, y evitar su alteración, pérdida, acceso no autorizado o tratamiento indebido**. Prohíbe registrar datos personales en archivos que no cumplan con las condiciones técnicas de integridad y seguridad."_, lo que implica que debemos tomar las medidas de prevecion necesarias para evitar que los datos de los usuarios pueda ser filtrados.
+Segun la [Ley 25.326](http://servicios.infoleg.gob.ar/infolegInternet/anexos/60000-64999/64790/norma.htm) articulo 9 establece que _"**el responsable del archivo de datos** debe tomar las medidas técnicas y organizativas necesarias para **garantizar la seguridad y confidencialidad de los datos personales, y evitar su alteración, pérdida, acceso no autorizado o tratamiento indebido**. Prohíbe registrar datos personales en archivos que no cumplan con las condiciones técnicas de integridad y seguridad."_, lo que implica que debemos tomar las medidas de prevecion necesarias para evitar que los datos de los usuarios pueda ser filtrados.
 
 ## Medidas de prevención
 
