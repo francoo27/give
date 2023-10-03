@@ -8,7 +8,7 @@
 ## Lista de Riesgos
 | ID | Riesgo | Posible Resultado | Síntoma | Probabilidad | Impacto | Prioridad | Respuesta | Responsable |
 |----|--------|-------------------|---------|--------------|---------|-----------|-----------|-------------|
-| R1 | Fallo de seguridad de datos | Compromiso de datos de usuarios y pérdida de confianza | Aumento de quejas de usuarios sobre accesos no autorizados | Alto 🟠| Muy alto 🔴| 20 | Mejorar medidas de seguridad y cifrado de datos | Área de Seguridad |
+| R1 | Fallo de seguridad de datos | Compromiso de datos de usuarios y pérdida de confianza | Aumento de quejas de usuarios sobre accesos no autorizados | Alto 🟠| Muy alto 🔴| 20 | [Mejorar medidas de seguridad y cifrado de datos](./mitigacion&#32;de&#32;riegos/R1-mitigacion.md) | Área de Seguridad |
 | R2 | Cambios en la regulación legal | Incumplimiento de regulaciones y posibles multas | Actualización de leyes o regulaciones que afecten al crowdfunding | Medio 🟡 | Alto 🟠 | 12 | Monitorear cambios legales y ajustar políticas | Área Legal |
 | R3 | Falta de demanda de campañas | Ingresos insuficientes para mantener la plataforma | Disminución de nuevos registros de campañas | Medio 🟡 |Medio 🟡 | 9 | Realizar campañas de marketing para atraer a creadores | Área de Marketing |
 | R4 | Fraude de campañas | Pérdida de inversión y desconfianza de patrocinadores | Informes de patrocinadores sobre campañas fraudulentas | Bajo🔵 | Alto 🟠| 8  | Implementar un proceso de verificación de campañas | Área de Confianza |
@@ -46,7 +46,5 @@ Las cuatro respuestas básicas de la gestión de riesgos son las siguientes:
 - **Mitigar**: Disminuir la probabilidad de que se produzca el riesgo al establecer acciones anticipadas para evitar que suceda.
 - **Evitar**: Contrarrestar los riesgos que van surgiendo mediante estrategias. Esto puede implicar cambios en el cronograma o el alcance del proyecto para eliminar la amenaza del riesgo.
 <hr>
-
-test
 
 [Volver a README](../README.md)
