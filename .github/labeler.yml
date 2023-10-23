@@ -1,0 +1,9 @@
+documentation:
+- "documentation/**"
+- "**.md"
+
+server:
+- "server/**"
+
+repo-config:
+- ".github/**"

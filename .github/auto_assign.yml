@@ -1,0 +1,17 @@
+addReviewers: true
+
+addAssignees: true
+
+reviewers:
+  - francoo27
+  - jpcastelli58
+  - FedericoRuiz98
+
+skipKeywords:
+  - wip
+
+numberOfReviewers: 0
+
+paths:
+  - "documentation/**"
+  - "**.md"

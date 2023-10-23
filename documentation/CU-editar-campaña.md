@@ -35,3 +35,6 @@
 6. Finalmente, en el **Paso 4: Plan de Progreso** (Opcional), el usuario puede editar checkpoints dentro del rango de fechas de la campaña para mostrar el progreso de la misma.
 7. El usuario envía el formulario de edición de campaña.
 8. El sistema valida los campos del formulario.
+<hr>
+
+[Volver a README](../README.md)

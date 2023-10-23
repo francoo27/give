@@ -1,12 +1,27 @@
-# Lista de Riesgos
+# Riesgos
 
-| ID | Riesgo | Posible Resultado | Síntoma | Probabilidad | Impacto | Prioridad | Respuestas | Responsable |
-|----|--------|-------------------|---------|--------------|---------|-----------|------------|-------------|
-| 1  |       |                   |         |              |         |           |            |             |
-| 2  |       |                   |         |              |         |           |            |             |
-| 3  |       |                   |         |              |         |           |            |             |
-| 4  |       |                   |         |              |         |           |            |             |
-| 5  |       |                   |         |              |         |           |            |             |
+## Tabla de probabilidad e impactos
+| Aspecto         | Nivel Muy Bajo (1) ⚪ | Nivel Bajo (2) 🔵 | Nivel Medio (3) 🟡 | Nivel Alto (4) 🟠 | Nivel Muy Alto (5) 🔴 |
+|-----------------|----------------------|-------------------|--------------------|-------------------|----------------------|
+| **Impacto**     | Muy bajo             | Bajo              | Medio              | Alto              | Muy alto             |
+| **Probabilidad**| Muy improbable       | Poco probable     | Probable           | Altamente probable | Casi cierto           |
+## Lista de Riesgos
+| ID | Riesgo | Posible Resultado | Síntoma | Probabilidad | Impacto | Prioridad | Respuesta | Responsable |
+|----|--------|-------------------|---------|--------------|---------|-----------|-----------|-------------|
+| R1 | Fallo de seguridad de datos | Compromiso de datos de usuarios y pérdida de confianza | Aumento de quejas de usuarios sobre accesos no autorizados | Alto 🟠| Muy alto 🔴| 20 | Mejorar medidas de seguridad y cifrado de datos | Área de Seguridad |
+| R2 | Cambios en la regulación legal | Incumplimiento de regulaciones y posibles multas | Actualización de leyes o regulaciones que afecten al crowdfunding | Medio 🟡 | Alto 🟠 | 12 | Monitorear cambios legales y ajustar políticas | Área Legal |
+| R3 | Falta de demanda de campañas | Ingresos insuficientes para mantener la plataforma | Disminución de nuevos registros de campañas | Medio 🟡 |Medio 🟡 | 9 | Realizar campañas de marketing para atraer a creadores | Área de Marketing |
+| R4 | Fraude de campañas | Pérdida de inversión y desconfianza de patrocinadores | Informes de patrocinadores sobre campañas fraudulentas | Bajo🔵 | Alto 🟠| 8  | Implementar un proceso de verificación de campañas | Área de Confianza |
+| R5 | Problemas técnicos graves | Interrupción del servicio y pérdida de usuarios | Aumento de informes de fallos en la aplicación | Medio 🟡| Alto 🟠| 12 | Establecer un equipo de respuesta a incidentes técnicos | Área de Tecnología |
+| R6 | Competencia agresiva | Pérdida de cuota de mercado | Aparición de competidores con características similares | Alto 🟠 | Medio 🟡 | 12| Continuar innovando y mejorando la experiencia del usuario | Área de Desarrollo |
+| R7 | Reputación dañada por campañas fallidas | Pérdida de confianza de los usuarios | Comentarios negativos en redes sociales o prensa | Medio 🟡| Medio 🟡 | 9 | Proporcionar soporte y asesoramiento a creadores | Área de Atención al Cliente |
+| R8 | Dificultades financieras | Sostenibilidad financiera en riesgo | Pérdida constante de ingresos | Medio 🟡| Alto 🟠| 12 | Revisar el modelo de negocio y buscar inversionistas | Área de Finanzas |
+| R9 | Dependencia de terceros | Interrupción del servicio debido a problemas con proveedores | Informes de fallos en servicios de terceros | Bajo 🔵 | Medio 🟡 | 6 | Identificar proveedores alternativos y plan de contingencia | Área de Operaciones |
+| R10 | Cambios en las tendencias del mercado | Pérdida de relevancia | Cambios en la preferencia de los usuarios | Alto 🟠 | Medio 🟡 | 12 | Mantenerse al tanto de las tendencias y adaptarse | Área de Estrategia |
+| R11 | Demanda de usuarios alta | Imposibilidad de respuestas por parte del servidor  | Errores 429 en los _logs_ del servidor | Medio 🟡 | Muy alto 🔴 | 15 | Asignar más recursos al servidor/Levantar mas instancias para satisfacer la demanda | Área de Tecnología | 
+| R12 | _Release_ defectuosa | Introdución de _issues_ en flujos criticos | Aumento de informes de fallos en la aplicación | Medio 🟡 | Medio 🟡 | 9 | Validar la integridad de las _releases_ con validaciones mediante CI/CD | Área de Tecnología | 
+| R13 | Problemas de disponibilidad de capital humano | Perdidad de capacidad para mantener/desarrollar funcionalidades | Disminución de _features_ nuevas o resolución de _bugs_ | Bajo 🔵 | Medio 🔴 | 10 | Monitoriar el estado del capital humano y evitar la cultura del "hereo" en los equipos | Área de RRHH | 
+
 
 
 ## La tabla de riesgos se compone generalmente de los siguientes elementos:
@@ -16,16 +31,9 @@
 - **Síntoma**: Identifica y describe una señal de alarma o advertencia de que el riesgo puede ocurrir. Es importante mencionar que no todos los riesgos tienen síntomas.
 - **Probabilidad**: Evalúa la probabilidad de que el riesgo suceda. Esta probabilidad puede ser alta, media o baja dependiendo del riesgo.
 - **Impacto**: Evalúa el grado de impacto en el proyecto en caso de que el riesgo ocurra. Este impacto puede ser alto, medio o bajo dependiendo del riesgo en sí mismo.
-- **Prioridad**: Prioriza los riesgos en una escala de 1 al 9 con ayuda de la matriz de impacto y probabilidad (figura 2), donde 1 indica el nivel máximo crítico y 9 el nivel mínimo.
+- **Prioridad**: Resultado de multiplicar _Impacto_ y _Probabilidad_ orden natural de los riegos.
 - **Respuestas**: Especifica la acción que el equipo de proyecto llevará a cabo para eliminar, trasladar o mitigar el riesgo.
 - **Responsable**: Nombre o rol del responsable de llevar a cabo la acción de respuesta al riesgo.
-
-
-# Tabla de probabilidad e impactos
-| Aspecto         | Nivel Muy Bajo (1) ⚪ | Nivel Bajo (2) 🔵 | Nivel Medio (3) 🟡 | Nivel Alto (4) 🟠 | Nivel Muy Alto (5) 🔴 |
-|-----------------|----------------------|-------------------|--------------------|-------------------|----------------------|
-| **Impacto**     | Muy bajo             | Bajo              | Medio              | Alto              | Muy alto             |
-| **Probabilidad**| Muy improbable       | Poco probable     | Probable           | Altamente probable | Casi cierto           |
 
 # Acciones de Respuesta a Riesgos
 
@@ -37,3 +45,8 @@ Las cuatro respuestas básicas de la gestión de riesgos son las siguientes:
 - **Transferir**: Trasladar todo el riesgo a terceros para disminuir el riesgo en el proyecto.
 - **Mitigar**: Disminuir la probabilidad de que se produzca el riesgo al establecer acciones anticipadas para evitar que suceda.
 - **Evitar**: Contrarrestar los riesgos que van surgiendo mediante estrategias. Esto puede implicar cambios en el cronograma o el alcance del proyecto para eliminar la amenaza del riesgo.
+<hr>
+
+test
+
+[Volver a README](../README.md)

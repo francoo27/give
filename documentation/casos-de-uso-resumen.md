@@ -128,3 +128,6 @@ Denunciar una persona fisica/juridica
 [^6]: ¿Que es un monto alto?
 
 [^7]: ¿Qué es una frecuencia alta?
+<hr>
+
+[Volver a README](../README.md)

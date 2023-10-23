@@ -24,3 +24,6 @@
 3. El usuario puede presentar un avance del proyecto completando un formulario que generara un _post_ donde puede incluir texto, imagenes, documentos, etc ([RN-009](./reglas-de-negocio.md/#9))
 4. El usuario envía el formulario del avance de la campaña.
 5. El sistema valida los campos del formulario.
+<hr>
+
+[Volver a README](../README.md)
